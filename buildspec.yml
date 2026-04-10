@@ -3,20 +3,21 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Install phase started
-      - docker --version   # verify docker is available
+      - echo "Install phase started"
+      - echo "Checking Docker version..."
+      - docker --version
 
   pre_build:
     commands:
-      - echo Pre-build phase started
+      - echo "Pre-build phase started"
 
   build:
     commands:
-      - echo Building Docker image...
+      - echo "Building Docker image..."
       - docker build -t myapp .
-      - echo Running container...
+      - echo "Running Docker container..."
       - docker run myapp
 
   post_build:
     commands:
-      - echo Build completed successfully
+      - echo "Build completed successfully"
