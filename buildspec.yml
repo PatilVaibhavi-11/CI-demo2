@@ -2,10 +2,9 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      docker: 20
     commands:
-      - echo Installing Docker...
+      - echo Install phase started
+      - docker --version   # verify docker is available
 
   pre_build:
     commands:
